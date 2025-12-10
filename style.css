@@ -117,7 +117,7 @@
         }
 
         .genre-header::after {
-            content: '';
+            content: none;
             position: absolute;
             bottom: 0;
             left: 0;
