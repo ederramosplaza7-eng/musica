@@ -1,0 +1,231 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f2f2f5 0%, #ececf0 50%, #f3f3f7 100%);
+            color: #b88585;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            width: 300%;
+            height: 300%;
+            top: -100%;
+            left: -100%;
+            background-size: 50px 50px, 80px 80px;
+            background-position: 0 0, 25px 25px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(15,12,41,0.95) 0%, rgba(48,43,99,0.95) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(238, 236, 236, 0.5);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid rgba(12, 11, 11, 0.1);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+            animation: pulse 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            color: #ddd;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .genre-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255,255,255,0.1);
+            animation: fadeIn 0.8s ease-out backwards;
+            position: relative;
+        }
+
+        .genre-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .genre-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .genre-card:hover::before {
+            opacity: 1;
+        }
+
+     
+        .genre-header {
+            padding: 2rem 1.5rem;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .genre-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .genre-card:hover .genre-header::after {
+            transform: scaleX(1);
+        }
+
+        .genre-header h2 {
+            font-size: 2rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .genre-card p {
+            padding: 1.5rem;
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .artists {
+            padding: 0 1.5rem 1.5rem;
+            font-style: italic;
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .rock {
+            background: linear-gradient( #e53935 0%, #d32f2f 50%, #c62828 100%);
+        }
+
+        .pop {
+            background: linear-gradient(135deg, #ec407a 0%, #d81b60 50%, #c2185b 100%);
+        }
+
+        .jazz {
+            background: linear-gradient(135deg, #5e35b1 0%, #4527a0 50%, #311b92 100%);
+        }
+
+        .hiphop {
+            background: linear-gradient(135deg, #424242 0%, #212121 50%, #000000 100%);
+        }
+
+        .electronic {
+            background: linear-gradient(135deg, #00acc1 0%, #0097a7 50%, #00838f 100%);
+        }
+
+        .reggaeton {
+            background: linear-gradient(135deg, #ff6f00 0%, #f57c00 50%, #ef6c00 100%);
+        }
+
+        .country {
+            background: linear-gradient(135deg, #8d6e63 0%, #6d4c41 50%, #5d4037 100%);
+        }
+
+        .classical {
+            background: linear-gradient(135deg, #7e57c2 0%, #673ab7 50%, #5e35b1 100%);
+        }
+
+        .blues {
+            background: linear-gradient(135deg, #1e88e5 0%, #1565c0 50%, #0d47a1 100%);
+        }
+
+        .salsa {
+            background: linear-gradient(135deg, #f4511e 0%, #e64a19 50%, #d84315 100%);
+        }
+
+        .reggae {
+            background: linear-gradient(135deg, #43a047 0%, #388e3c 50%, #2e7d32 100%);
+        }
+
+        .rnb {
+            background: linear-gradient(135deg, #ab47bc 0%, #8e24aa 50%, #7b1fa2 100%);
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(15,12,41,0.95) 0%, rgba(48,43,99,0.95) 100%);
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            font-size: 1.2rem;
+            color: #ddd;
+            font-weight: bold;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+            border-top: 3px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            main {
+                grid-template-columns: 1fr;
+                padding: 0 1rem 2rem;
+                gap: 2rem;
+            }
+
+            .genre-header h2 {
+                font-size: 1.7rem;
+            }
+        }
